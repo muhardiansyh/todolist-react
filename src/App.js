@@ -29,7 +29,11 @@ function App() {
       <h1 className='fw-normal fs-2'>TodoList App</h1>
       <p>Add your daily activity</p>
       <TodoForm onCreate={onCreate}/>
-      <TodoList todos={todos} onDelete={onDelete} onEdit={onEdit}/>
+      {todos.length === 0 ? (
+        <h1 className='text-secondary opacity-25 mt-5'>You have no tasks...</h1>
+      ) : (
+        <TodoList todos={todos} onDelete={onDelete} onEdit={onEdit}/>
+      )}
     </div>
   );
 }
