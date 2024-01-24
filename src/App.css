@@ -2,3 +2,4 @@
 #check{transform: scale(1.5);}
 .todos{height: 50px;}
 .icons{cursor: pointer;}
+.todo-edit{outline: none; padding: 13px 0;}
