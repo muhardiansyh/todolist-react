@@ -9,12 +9,18 @@ function App() {
   const onCreate = (newTodo) => {
     setTodos([...todos,{id:Math.round(Math.random()*99999), ...newTodo}])
   }
+  const onDelete = (idTodo) => {
+    const deletedTodo = todos.filter((todo) => {
+      return todo.id !== idTodo
+    })
+    setTodos(deletedTodo)
+  }
   return (
     <div className='container py-5'>
       <h1 className='fw-normal fs-2'>TodoList App</h1>
       <p>Add your daily activity</p>
       <TodoForm onCreate={onCreate}/>
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} onDelete={onDelete}/>
     </div>
   );
 }
